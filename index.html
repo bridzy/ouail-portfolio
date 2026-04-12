@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Ouail Lekhchine – Data Analyst & Data Engineer spécialisé en Python, Power BI, SQL et Machine Learning.">
+    <meta name="keywords" content="Data Analyst, Data Engineer, Python, Power BI, SQL, Machine Learning, Portfolio">
+    <meta name="author" content="Ouail Lekhchine">
+    <title>Ouail Lekhchine | Data Analyst Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>OL<span class="logo-bracket"> /&gt;</span>
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#experience" class="nav-link">Expériences</a></li>
+                <li><a href="#projects" class="nav-link">Projets</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#education" class="nav-link">Formation</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting animate-in">Bonjour, je suis</p>
+                <h1 class="hero-name animate-in delay-1">Ouail <span class="text-gradient">Lekhchine</span></h1>
+                <h2 class="hero-title animate-in delay-2">Data Analyst & Data Engineer</h2>
+                <p class="hero-subtitle animate-in delay-3">
+                    À la recherche d'un contrat CDI — Hauts-de-France / Île-de-France
+                </p>
+                <div class="hero-cta animate-in delay-4">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Me contacter</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#projects" class="btn btn-outline">
+                        <span>Voir mes projets</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual animate-in delay-2">
+                <div class="hero-avatar-wrapper">
+                    <img src="assets/profile-avatar.png" alt="Ouail Lekhchine" class="hero-avatar">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-ring avatar-ring-2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-in delay-5">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">01.</span> À propos
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Profil <strong>Data Analyst / Data Engineer</strong>, à l'aise avec la collecte, 
+                        la structuration et l'exploitation des données, ainsi qu'avec la création de 
+                        dashboards et l'automatisation de rapports pour le suivi des performances.
+                    </p>
+                    <p>
+                        Passionné par l'intelligence artificielle, la data science et l'e-commerce, 
+                        j'aime expérimenter avec l'automatisation de workflows (n8n, APIs, intégrations) 
+                        et explorer les dernières innovations technologiques.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="2">0</span>
+                            <span class="stat-label">Années d'alternance</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="745">0</span>
+                            <span class="stat-label">Score TOEIC</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                            <span class="stat-label">Technologies maîtrisées</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="code-window">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-filename">ouail_profile.py</span>
+                        </div>
+                        <pre class="code-content"><code><span class="code-keyword">class</span> <span class="code-class">DataAnalyst</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):
+        self.name = <span class="code-str">"Ouail Lekhchine"</span>
+        self.role = <span class="code-str">"Data Analyst"</span>
+        self.languages = [<span class="code-str">"fr"</span>, <span class="code-str">"en"</span>]
+        self.skills = {
+            <span class="code-str">"analytics"</span>: [<span class="code-str">"Python"</span>, <span class="code-str">"SQL"</span>,
+                          <span class="code-str">"Power BI"</span>],
+            <span class="code-str">"ml"</span>: [<span class="code-str">"Scikit-learn"</span>, 
+                   <span class="code-str">"XAI"</span>],
+            <span class="code-str">"tools"</span>: [<span class="code-str">"Git"</span>, <span class="code-str">"ETL"</span>,
+                      <span class="code-str">"Dataiku"</span>]
+        }
+
+    <span class="code-keyword">def</span> <span class="code-func">available</span>(self):
+        <span class="code-keyword">return</span> <span class="code-bool">True</span>  <span class="code-comment"># CDI 🚀</span></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">02.</span> Expériences Professionnelles
+            </h2>
+            <div class="timeline">
+                <!-- Experience 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Data Analyst en Alternance</h3>
+                                    <p class="timeline-company">SARL Engineering Consulting Center — Lille</p>
+                                </div>
+                                <span class="timeline-date">2024 - 2026</span>
+                            </div>
+                            <div class="timeline-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">Excel</span>
+                                <span class="tag">SQL</span>
+                            </div>
+                            <ul class="timeline-details">
+                                <li>Préparation, nettoyage et structuration des données via des processus ETL</li>
+                                <li>Développement de dashboards interactifs sur Power BI et Python pour le pilotage des KPIs</li>
+                                <li>Automatisation de reportings à la demande et mise en place d'analyses adaptées aux besoins des équipes métiers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-role">Développeur Web en Alternance</h3>
+                                    <p class="timeline-company">SARL Engineering Consulting Center — Lille</p>
+                                </div>
+                                <span class="timeline-date">2023 - 2024</span>
+                            </div>
+                            <div class="timeline-tags">
+                                <span class="tag">WordPress</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <ul class="timeline-details">
+                                <li>Développement et personnalisation de sites web sur WordPress, intégration de thèmes et plugins adaptés aux besoins clients</li>
+                                <li>Optimisation de l'ergonomie et de l'expérience utilisateur (UX/UI)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">03.</span> Projets
+            </h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card featured">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="project-title">Détection d'anomalies avec XAI</h3>
+                        <p class="project-type">Projet de recherche M2</p>
+                        <p class="project-description">
+                            Analyse de données e-commerce pour repérer des situations inhabituelles. 
+                            Création d'alertes pour identifier les problèmes importants plus rapidement. 
+                            Explication des résultats pour les rendre plus clairs et exploitables. 
+                            Aide à la prise de décision grâce à des alertes compréhensibles.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Dataiku</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">XAI</span>
+                            <span class="tag">Machine Learning</span>
+                        </div>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="project-title">Analyse Prédictive Playstore</h3>
+                        <p class="project-type">Projet académique</p>
+                        <p class="project-description">
+                            Collecte et préparation des données d'applications mobiles (Play Store). 
+                            Création d'un modèle pour estimer le prix des applications. 
+                            Analyse et visualisation des résultats. 
+                            Proposition de recommandations à partir des données.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Matplotlib</span>
+                            <span class="tag">Scikit-learn</span>
+                        </div>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                            </svg>
+                        </div>
+                        <h3 class="project-title">Dashboards KPIs Interactifs</h3>
+                        <p class="project-type">Projet professionnel</p>
+                        <p class="project-description">
+                            Développement de tableaux de bord interactifs pour le pilotage des KPIs. 
+                            Automatisation de reportings à la demande. 
+                            Mise en place d'analyses adaptées aux besoins des équipes métiers.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">ETL</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="project-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">04.</span> Compétences
+            </h2>
+            <div class="skills-grid">
+                <!-- Technical Skills -->
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+                        Techniques
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item" data-level="95">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="90">
+                            <div class="skill-info">
+                                <span class="skill-name">Power BI</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="88">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="85">
+                            <div class="skill-info">
+                                <span class="skill-name">Excel Avancé</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="80">
+                            <div class="skill-info">
+                                <span class="skill-name">Machine Learning</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="82">
+                            <div class="skill-info">
+                                <span class="skill-name">ETL</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="78">
+                            <div class="skill-info">
+                                <span class="skill-name">Git</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                        <div class="skill-item" data-level="75">
+                            <div class="skill-info">
+                                <span class="skill-name">Gen AI / LLM</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="skills-category">
+                    <h3 class="skills-category-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                        Soft Skills
+                    </h3>
+                    <div class="soft-skills-grid">
+                        <div class="soft-skill-card">
+                            <div class="soft-skill-icon">🔍</div>
+                            <span>Analyse & Résolution de problèmes</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <div class="soft-skill-icon">🤝</div>
+                            <span>Travail en équipe</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <div class="soft-skill-icon">📊</div>
+                            <span>Communication de résultats</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <div class="soft-skill-icon">🚀</div>
+                            <span>Esprit d'initiative</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <div class="soft-skill-icon">💡</div>
+                            <span>Curiosité technologique</span>
+                        </div>
+                        <div class="soft-skill-card">
+                            <div class="soft-skill-icon">🎯</div>
+                            <span>Autonomie</span>
+                        </div>
+                    </div>
+
+                    <h3 class="skills-category-title" style="margin-top: 2.5rem;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        Langues
+                    </h3>
+                    <div class="languages-grid">
+                        <div class="lang-card">
+                            <span class="lang-flag">🇫🇷</span>
+                            <span class="lang-name">Français</span>
+                            <span class="lang-level">Bilingue</span>
+                        </div>
+                        <div class="lang-card">
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-name">Anglais</span>
+                            <span class="lang-level">Avancé — TOEIC 745 (B2)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">05.</span> Formation
+            </h2>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <div class="edu-year">2024 - 2026</div>
+                    <div class="edu-info">
+                        <h3>Master DATA & IA</h3>
+                        <p class="edu-school">Université Catholique de Lille</p>
+                        <p class="edu-desc">Formation avancée en data science, intelligence artificielle et ingénierie des données.</p>
+                    </div>
+                    <div class="edu-icon">🎓</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-year">2021 - 2024</div>
+                    <div class="edu-info">
+                        <h3>Licence Informatique</h3>
+                        <p class="edu-school">Université Catholique de Lille</p>
+                        <p class="edu-desc">Fondamentaux de l'informatique, programmation et systèmes d'information.</p>
+                    </div>
+                    <div class="edu-icon">📚</div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-year">2020</div>
+                    <div class="edu-info">
+                        <h3>Baccalauréat en Mathématiques</h3>
+                        <p class="edu-school"></p>
+                        <p class="edu-desc">Spécialisation mathématiques, base solide en logique et raisonnement analytique.</p>
+                    </div>
+                    <div class="edu-icon">📐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="section interests">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">06.</span> Centres d'intérêt
+            </h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <div class="interest-icon">🤖</div>
+                    <h3>Veille IA & Data</h3>
+                    <p>IA, Data Science et e-commerce</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">⚙️</div>
+                    <h3>Automatisation</h3>
+                    <p>Workflows n8n, APIs, intégrations</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">🥋</div>
+                    <h3>Kung-fu</h3>
+                    <p>Discipline et dépassement de soi</p>
+                </div>
+                <div class="interest-card">
+                    <div class="interest-icon">✈️</div>
+                    <h3>Voyages</h3>
+                    <p>Découverte de cultures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="section-number">07.</span> Contact
+            </h2>
+            <div class="contact-content">
+                <p class="contact-intro">
+                    Vous avez un projet, une opportunité ou simplement envie d'échanger ?<br>
+                    N'hésitez pas à me contacter !
+                </p>
+                <div class="contact-cards">
+                    <a href="mailto:ouail.lekhchine@gmail.com" class="contact-card" id="contact-email">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Email</span>
+                            <span class="contact-card-value">ouail.lekhchine@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:0672607216" class="contact-card" id="contact-phone">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Téléphone</span>
+                            <span class="contact-card-value">06 72 60 72 16</span>
+                        </div>
+                    </a>
+                    <a href="http://linkedin.com/in/ouail_lekhchine" target="_blank" class="contact-card" id="contact-linkedin">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 6a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">LinkedIn</span>
+                            <span class="contact-card-value">ouail_lekhchine</span>
+                        </div>
+                    </a>
+                    <div class="contact-card" id="contact-location">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Localisation</span>
+                            <span class="contact-card-value">Hauts-de-France / Île-de-France</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <span class="logo-bracket">&lt;</span> Conçu & développé par <strong>Ouail Lekhchine</strong> <span class="logo-bracket">/&gt;</span>
+                </p>
+                <p class="footer-year">© 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
