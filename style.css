@@ -641,6 +641,29 @@ body {
     gap: 1rem;
 }
 
+.timeline-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.company-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+}
+
+.timeline-card:hover .company-logo {
+    border-color: var(--border-glow);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+}
+
 .timeline-role {
     font-size: 1.25rem;
     font-weight: 700;
@@ -980,6 +1003,23 @@ body {
     border-radius: 8px;
     text-align: center;
     border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.edu-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+    transition: var(--transition-smooth);
+}
+
+.edu-card:hover .edu-logo {
+    border-color: var(--border-glow);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
 }
 
 .edu-info {
