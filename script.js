@@ -191,7 +191,7 @@ function initScrollReveal() {
     const elements = document.querySelectorAll(
         '.timeline-item, .project-card, .edu-card, .interest-card, ' +
         '.soft-skill-card, .lang-card, .contact-card, .stat-card, ' +
-        '.code-window, .about-text, .section-title'
+        '.code-window, .about-text, .section-title, .cert-card'
     );
 
     elements.forEach(el => el.classList.add('reveal'));

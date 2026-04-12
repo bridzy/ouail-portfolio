@@ -1051,6 +1051,80 @@ body {
 }
 
 /* ============================================
+   CERTIFICATIONS SECTION
+   ============================================ */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.cert-card {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+
+.cert-card:hover {
+    border-color: var(--border-glow);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.cert-card:hover::before {
+    opacity: 1;
+}
+
+.cert-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(0, 212, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    color: var(--accent-primary);
+    border: 1px solid rgba(0, 212, 255, 0.12);
+    transition: var(--transition-smooth);
+}
+
+.cert-card:hover .cert-icon {
+    background: rgba(0, 212, 255, 0.12);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+.cert-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.cert-issuer {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+
+/* ============================================
    INTERESTS SECTION
    ============================================ */
 .interests-grid {
@@ -1250,6 +1324,10 @@ body {
     .interests-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1323,6 +1401,10 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .certifications-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .languages-grid {
         flex-direction: column;
     }
@@ -1358,6 +1440,10 @@ body {
     }
 
     .interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certifications-grid {
         grid-template-columns: 1fr;
     }
 
