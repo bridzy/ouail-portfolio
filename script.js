@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCursorGlow();
     initMagneticButtons();
     initTiltCards();
+    initVisitorCounter();
 });
 
 /* ============================================
@@ -423,5 +424,78 @@ function animateCounter(element, target) {
         }
     }
     
+    update();
+}
+
+/* ============================================
+   VISITOR COUNTER (GoatCounter)
+   ============================================ */
+function initVisitorCounter() {
+    const countEl = document.getElementById('visitor-count');
+    if (!countEl) return;
+
+    // 👉 Remplace YOURCODE par ton code GoatCounter (ex: ouail-portfolio)
+    const goatCounterCode = 'ouail';
+
+    // Don't fetch if not configured yet
+    if (goatCounterCode === 'YOURCODE') {
+        countEl.textContent = '—';
+        return;
+    }
+
+    // Fetch total pageviews from GoatCounter public API
+    const apiUrl = `https://${goatCounterCode}.goatcounter.com/counter/TOTAL.json`;
+
+    fetch(apiUrl)
+        .then(res => {
+            if (!res.ok) throw new Error('API error');
+            return res.json();
+        })
+        .then(data => {
+            const total = parseInt(data.count.replace(/\s/g, ''), 10) || 0;
+            animateVisitorCount(countEl, total);
+        })
+        .catch(() => {
+            // Fallback: try fetching the root page counter
+            fetch(`https://${goatCounterCode}.goatcounter.com/counter/%2F.json`)
+                .then(res => res.ok ? res.json() : Promise.reject())
+                .then(data => {
+                    const count = parseInt(data.count.replace(/\s/g, ''), 10) || 0;
+                    animateVisitorCount(countEl, count);
+                })
+                .catch(() => {
+                    countEl.textContent = '—';
+                });
+        });
+}
+
+function animateVisitorCount(element, target) {
+    if (target === 0) {
+        element.textContent = '0';
+        return;
+    }
+
+    const duration = 1500;
+    const steps = 60;
+    const stepTime = duration / steps;
+    let current = 0;
+    let step = 0;
+
+    function update() {
+        step++;
+        // Easing: start fast, slow down at end
+        const progress = step / steps;
+        const eased = 1 - Math.pow(1 - progress, 3);
+        current = Math.floor(eased * target);
+
+        element.textContent = current.toLocaleString('fr-FR');
+
+        if (step < steps) {
+            setTimeout(update, stepTime);
+        } else {
+            element.textContent = target.toLocaleString('fr-FR');
+        }
+    }
+
     update();
 }
