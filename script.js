@@ -30,7 +30,7 @@ function initTypingEffect() {
         'Machine Learning & IA',
         'Automatisation & ETL'
     ];
-    
+
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -277,7 +277,7 @@ function initNavbar() {
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY;
-        
+
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -372,7 +372,7 @@ function initSkillBars() {
             if (entry.isIntersecting) {
                 const item = entry.target;
                 const level = item.getAttribute('data-level');
-                
+
                 setTimeout(() => {
                     item.classList.add('visible');
                     const fill = item.querySelector('.skill-fill');
@@ -380,7 +380,7 @@ function initSkillBars() {
                         fill.style.width = level + '%';
                     }
                 }, index * 120);
-                
+
                 observer.unobserve(item);
             }
         });
@@ -423,7 +423,7 @@ function animateCounter(element, target) {
             element.textContent = target;
         }
     }
-    
+
     update();
 }
 
@@ -438,7 +438,7 @@ function initVisitorCounter() {
     const goatCounterCode = 'ouail';
 
     // Don't fetch if not configured yet
-    if (goatCounterCode === 'YOURCODE') {
+    if (goatCounterCode === 'ouail') {
         countEl.textContent = '—';
         return;
     }
