@@ -10,7 +10,157 @@ document.addEventListener('DOMContentLoaded', () => {
     initCounters();
     initMobileNav();
     initActiveNavLink();
+    initTypingEffect();
+    initCursorGlow();
+    initMagneticButtons();
+    initTiltCards();
 });
+
+/* ============================================
+   TYPING EFFECT
+   ============================================ */
+function initTypingEffect() {
+    const element = document.getElementById('typing-text');
+    if (!element) return;
+
+    const phrases = [
+        'Data Analyst & Data Engineer',
+        'Python · SQL · Power BI',
+        'Machine Learning & IA',
+        'Automatisation & ETL'
+    ];
+    
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 80;
+
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            element.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 40;
+        } else {
+            element.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 80;
+        }
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            // Pause at end of phrase
+            typingSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typingSpeed = 400;
+        }
+
+        setTimeout(type, typingSpeed);
+    }
+
+    // Start typing after a short delay
+    setTimeout(type, 1200);
+}
+
+/* ============================================
+   CURSOR GLOW EFFECT
+   ============================================ */
+function initCursorGlow() {
+    const glow = document.getElementById('cursor-glow');
+    if (!glow) return;
+
+    // Only on desktop
+    if (window.innerWidth < 1024) {
+        glow.style.display = 'none';
+        return;
+    }
+
+    let mouseX = 0, mouseY = 0;
+    let glowX = 0, glowY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    function animateGlow() {
+        // Smooth follow with lerp
+        glowX += (mouseX - glowX) * 0.08;
+        glowY += (mouseY - glowY) * 0.08;
+
+        glow.style.left = glowX + 'px';
+        glow.style.top = glowY + 'px';
+
+        requestAnimationFrame(animateGlow);
+    }
+
+    animateGlow();
+}
+
+/* ============================================
+   MAGNETIC BUTTONS
+   ============================================ */
+function initMagneticButtons() {
+    if (window.innerWidth < 1024) return;
+
+    const buttons = document.querySelectorAll('.magnetic');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+            btn.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        });
+
+        btn.addEventListener('mouseenter', () => {
+            btn.style.transition = 'transform 0.1s ease';
+        });
+    });
+}
+
+/* ============================================
+   TILT EFFECT ON PROJECT CARDS
+   ============================================ */
+function initTiltCards() {
+    if (window.innerWidth < 1024) return;
+
+    const cards = document.querySelectorAll('[data-tilt]');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = ((y - centerY) / centerY) * -5;
+            const rotateY = ((x - centerX) / centerX) * 5;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
+            card.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        });
+
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.1s ease';
+        });
+    });
+}
 
 /* ============================================
    PARTICLE BACKGROUND
