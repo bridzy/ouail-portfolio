@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbar();
     initMobileNav();
     initActiveNavLink();
-    initScrollReveal();
     initCounters();
     initVisitorCounter();
 });
@@ -95,34 +94,6 @@ function initActiveNavLink() {
     }, { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' });
 
     sections.forEach(section => observer.observe(section));
-}
-
-/* ============================================
-   SCROLL REVEAL ANIMATIONS
-   ============================================ */
-function initScrollReveal() {
-    if (prefersReducedMotion) return;
-
-    const elements = document.querySelectorAll(
-        '.timeline-item, .project-card, .other-project, .edu-card, .cert-card, ' +
-        '.interest-card, .skills-group, .contact-card, .stat-card, .code-window, ' +
-        '.about-text, .section-title'
-    );
-
-    elements.forEach(el => el.classList.add('reveal'));
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, i * 60);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-    elements.forEach(el => observer.observe(el));
 }
 
 /* ============================================

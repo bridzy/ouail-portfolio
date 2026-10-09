@@ -5,7 +5,7 @@
    ============================================ */
 :root {
     /* Colors — light */
-    --bg: #f5f7fb;
+    --bg: #e8f0fb;
     --bg-elev: #ffffff;
     --bg-card: #ffffff;
     --bg-card-hover: #fbfcfe;
@@ -54,7 +54,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-        --bg: #0b1424;
+        --bg: #0c1d3a;
         --bg-elev: #0f1a2e;
         --bg-card: #111d33;
         --bg-card-hover: #15233e;
@@ -85,7 +85,7 @@
 }
 
 :root[data-theme="dark"] {
-    --bg: #0b1424;
+    --bg: #0c1d3a;
     --bg-elev: #0f1a2e;
     --bg-card: #111d33;
     --bg-card-hover: #15233e;
@@ -134,7 +134,6 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: background-color var(--transition-smooth), color var(--transition-smooth);
 }
 
 img {
@@ -304,12 +303,6 @@ a {
     position: relative;
 }
 
-.section:nth-of-type(even) {
-    background: var(--bg-elev);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-}
-
 .section-title {
     font-size: 1.9rem;
     font-weight: 700;
@@ -407,9 +400,6 @@ a {
     align-items: center;
     padding: 110px 0 70px;
     position: relative;
-    background:
-        radial-gradient(ellipse 60% 50% at 85% 20%, var(--accent-soft), transparent 70%),
-        var(--bg);
 }
 
 .hero-content {
@@ -533,26 +523,6 @@ a {
     object-fit: cover;
     background: var(--bg-subtle);
     border: 4px solid var(--bg);
-}
-
-/* Entrance animation */
-.animate-in {
-    opacity: 0;
-    transform: translateY(16px);
-    animation: fadeInUp 0.6s ease forwards;
-}
-
-.delay-1 { animation-delay: 0.08s; }
-.delay-2 { animation-delay: 0.16s; }
-.delay-3 { animation-delay: 0.24s; }
-.delay-4 { animation-delay: 0.32s; }
-.delay-5 { animation-delay: 0.4s; }
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* ============================================
@@ -1270,20 +1240,6 @@ a.contact-card:hover {
 }
 
 /* ============================================
-   SCROLL REVEAL ANIMATION
-   ============================================ */
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ============================================
    REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
@@ -1296,12 +1252,6 @@ a.contact-card:hover {
         animation-delay: 0ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
-    }
-
-    .animate-in,
-    .reveal {
-        opacity: 1;
-        transform: none;
     }
 }
 

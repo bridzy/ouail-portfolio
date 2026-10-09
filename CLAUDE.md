@@ -16,12 +16,11 @@ The visitor counter fetches from GoatCounter, so open via a server rather than `
 
 ## Architecture
 
-- `index.html` — all content. Sections are `<section id="..." class="section ...">`: hero (no `.section` class), about, experience, projects, skills, education (includes certifications), interests, contact, then the footer. Headings use a numbered `<span class="section-number">NN.</span>`; inserting/removing a section means renumbering the following ones. Alternating section backgrounds come from `.section:nth-of-type(even)`.
+- `index.html` — all content. Sections are `<section id="..." class="section ...">`: hero (no `.section` class), about, experience, projects, skills, education (includes certifications), interests, contact, then the footer. Headings use a numbered `<span class="section-number">NN.</span>`; inserting/removing a section means renumbering the following ones. The page background is one solid blue (`--bg`), with no gradients, bands or scroll animations; keep it static.
 - `script.js` — one `DOMContentLoaded` handler calls `init*()` functions. Behavior is wired by ids/classes in the HTML:
-  - `initScrollReveal()` adds `.reveal`/`.visible` to a hard-coded selector list. A new card type won't animate in unless its class is added there.
   - `initActiveNavLink()` highlights nav links by matching `#hero, .section` ids against `href="#id"`.
   - `.stat-number[data-target="N"]` → animated counter (shared `animateNumber()` also drives the visitor count).
-  - `prefersReducedMotion` short-circuits reveal and counter animations; CSS has a matching `prefers-reduced-motion` block.
+  - `prefersReducedMotion` short-circuits the counter animations; CSS has a matching `prefers-reduced-motion` block.
 - `style.css` — all colors are CSS variables. Light tokens live in `:root`; dark tokens are duplicated in `@media (prefers-color-scheme: dark) :root:not([data-theme="light"])` **and** `:root[data-theme="dark"]` — keep the two dark blocks in sync. The theme toggle sets `html[data-theme]` and stores it in `localStorage`; an inline script in `<head>` re-applies it before first paint. The code window in "À propos" is intentionally dark in both themes. Breakpoints: 1024px, 768px, 480px at the end of the file.
 - `experiences_projets_ouail.md` — source-of-truth CV text. Not loaded by the site; use it when adding or rewording content.
 - `assets/` — images, `CV_Ouail_Lekhchine.pdf` (linked by the "Télécharger mon CV" buttons; replace this file to update the CV), and `og-image.png` (1200×630 LinkedIn/Open Graph preview, referenced by absolute URL in `<head>`). Some filenames contain spaces/accents.
