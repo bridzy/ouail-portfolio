@@ -2,41 +2,12 @@
    PORTFOLIO - Interactive JavaScript
    ============================================ */
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
 document.addEventListener('DOMContentLoaded', () => {
-    initThemeToggle();
     initNavbar();
     initMobileNav();
     initActiveNavLink();
-    initCounters();
     initVisitorCounter();
 });
-
-/* ============================================
-   THEME TOGGLE (light / dark)
-   ============================================ */
-// The saved choice is applied by an inline script in <head> before first paint.
-// Without a saved choice, the CSS follows the OS setting (prefers-color-scheme).
-function initThemeToggle() {
-    const toggle = document.getElementById('theme-toggle');
-    if (!toggle) return;
-
-    const root = document.documentElement;
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-    function currentTheme() {
-        return root.getAttribute('data-theme') || (systemDark.matches ? 'dark' : 'light');
-    }
-
-    toggle.addEventListener('click', () => {
-        const next = currentTheme() === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', next);
-        try {
-            localStorage.setItem('theme', next);
-        } catch (e) { /* storage unavailable: choice lasts for this visit only */ }
-    });
-}
 
 /* ============================================
    NAVBAR SCROLL EFFECT
@@ -97,52 +68,6 @@ function initActiveNavLink() {
 }
 
 /* ============================================
-   COUNTER ANIMATION
-   ============================================ */
-function initCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-
-    if (prefersReducedMotion) {
-        counters.forEach(counter => {
-            counter.textContent = counter.getAttribute('data-target');
-        });
-        return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-target'), 10);
-                animateNumber(counter, target, 1500);
-                observer.unobserve(counter);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    counters.forEach(counter => observer.observe(counter));
-}
-
-// Ease-out count from 0 to target; formats with French thousands separators.
-function animateNumber(element, target, duration) {
-    if (prefersReducedMotion || target === 0) {
-        element.textContent = target.toLocaleString('fr-FR');
-        return;
-    }
-
-    const start = performance.now();
-
-    function update(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        element.textContent = Math.floor(eased * target).toLocaleString('fr-FR');
-        if (progress < 1) requestAnimationFrame(update);
-    }
-
-    requestAnimationFrame(update);
-}
-
-/* ============================================
    VISITOR COUNTER (GoatCounter)
    ============================================ */
 // Requires "Allow adding visitor counts on your website" in GoatCounter settings.
@@ -161,7 +86,9 @@ function initVisitorCounter() {
 
     getCount('TOTAL')
         .catch(() => getCount('%2F')) // fallback: home page counter
-        .then(total => animateNumber(countEl, total, 1200))
+        .then(total => {
+            countEl.textContent = total.toLocaleString('fr-FR');
+        })
         .catch(() => {
             countEl.textContent = '—';
         });
