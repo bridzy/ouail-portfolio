@@ -14,21 +14,22 @@
 - Participation au développement de solutions web.  
 - Contribution à l’intégration et à la maintenance de sites web.  
 
-### Développeur Web en alternance  
+### Ingénieur base de données en alternance  
 **SARL Engineering Consulting Center — Lille**  
 **2023 – 2024**  
-**Outils :** WordPress, HTML, CSS, Python  
-- Développement et personnalisation de sites web sur WordPress.  
-- Intégration de thèmes et plugins adaptés aux besoins clients.  
-- Optimisation de l’ergonomie et de l’expérience utilisateur (UX/UI).  
+**Outils :** MongoDB, Supabase, PostgreSQL  
+- Migration d'une base MongoDB vers Supabase : analyse de l'existant, règles de correspondance et reprise complète des données.  
+- Vérification de la qualité des données après migration : contrôles de complétude et de cohérence, détection des écarts et documentation.  
 
 ### Data Analyst en alternance  
 **SARL Engineering Consulting Center — Lille**  
 **2024 – 2026**  
 **Outils :** Python, Power BI, Excel, SQL  
-- Préparation, nettoyage et structuration des données via des processus ETL.  
-- Développement de dashboards interactifs sur Power BI et Python pour le pilotage des KPIs.  
-- Automatisation de reportings à la demande et mise en place d’analyses adaptées aux besoins des équipes métiers.  
+- Recueil et traduction des besoins des directions opérationnelles en indicateurs de pilotage.  
+- Requêtage SQL, extraction, préparation et modélisation des jeux de données alimentant les rapports.  
+- Conception, maintenance et évolution de tableaux de bord Power BI et Python sur les ventes, achats, chiffre d'affaires et feedback client.  
+- Définition, harmonisation et documentation des indicateurs entre services, avec contrôles de cohérence avant diffusion.  
+- Analyses ad hoc à la demande des équipes métier et automatisation des traitements récurrents, documentés pour leur maintien en condition opérationnelle.  
 
 ---
 
