@@ -3,11 +3,17 @@
    ============================================ */
 :root {
     /* Colors */
-    --bg: #0c1d3a;
+    --bg: #0a1830;
     --bg-elev: #0f1a2e;
-    --bg-card: #111d33;
-    --bg-card-hover: #15233e;
-    --bg-subtle: #14213a;
+    --bg-card: rgba(17, 35, 68, 0.78);
+    --bg-card-hover: rgba(21, 42, 80, 0.85);
+    --bg-subtle: rgba(255, 255, 255, 0.05);
+
+    /* Background glows */
+    --glow-1: rgba(64, 132, 230, 0.22);
+    --glow-2: rgba(40, 90, 200, 0.18);
+    --glow-3: rgba(91, 155, 230, 0.10);
+    --grid-line: rgba(140, 180, 240, 0.055);
 
     --text-primary: #e6ebf3;
     --text-secondary: #b0bccf;
@@ -70,6 +76,41 @@ body {
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fixed backdrop: soft blue glows + fine grid. Content scrolls over it;
+   nothing is animated. */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+body::before {
+    background:
+        radial-gradient(ellipse 55% 45% at 88% 8%, var(--glow-1), transparent 70%),
+        radial-gradient(ellipse 50% 50% at 5% 95%, var(--glow-2), transparent 70%),
+        radial-gradient(ellipse 40% 35% at 45% 55%, var(--glow-3), transparent 75%),
+        linear-gradient(180deg, #0b1b36 0%, var(--bg) 55%, #081428 100%);
+}
+
+body::after {
+    background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 30%, #000 30%, transparent 100%);
+    mask-image: radial-gradient(ellipse 85% 70% at 50% 30%, #000 30%, transparent 100%);
+}
+
+.hero,
+.section,
+.footer {
+    position: relative;
+    z-index: 1;
 }
 
 img {

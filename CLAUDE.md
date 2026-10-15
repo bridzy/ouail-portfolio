@@ -16,12 +16,12 @@ The visitor counter fetches from GoatCounter, so open via a server rather than `
 
 ## Architecture
 
-- `index.html` — all content. Sections are `<section id="..." class="section ...">`: hero (no `.section` class), about, experience, projects, skills, education (includes certifications), interests, contact, then the footer. Headings use a numbered `<span class="section-number">NN.</span>`; inserting/removing a section means renumbering the following ones. The page background is one solid blue (`--bg`), with no gradients, bands or scroll animations; keep it static.
+- `index.html` — all content. Sections are `<section id="..." class="section ...">`: hero (no `.section` class), about, experience, projects, skills, education (includes certifications), interests, contact, then the footer. Headings use a numbered `<span class="section-number">NN.</span>`; inserting/removing a section means renumbering the following ones. The page background is a fixed navy backdrop drawn by `body::before` (blue glows) and `body::after` (masked grid) in `style.css`; `.hero`, `.section` and `.footer` sit above it with `z-index: 1`. It does not animate.
 - `script.js` — one `DOMContentLoaded` handler calls `init*()` functions. Behavior is wired by ids/classes in the HTML:
   - `initActiveNavLink()` highlights nav links by matching `#hero, .section` ids against `href="#id"`.
-- `style.css` — all colors are CSS variables in `:root`. The site has a single fixed navy theme (no light/dark toggle) and nothing moves: no background animation, scroll reveals, hover lifts or animated counters — keep it static. Breakpoints: 1024px, 768px, 480px at the end of the file.
+- `style.css` — all colors are CSS variables in `:root`. The site has a single fixed navy theme (no light/dark toggle) and no motion: no animated background, scroll reveals, hover lifts or animated counters. Breakpoints: 1024px, 768px, 480px at the end of the file.
 - `experiences_projets_ouail.md` — source-of-truth CV text. Not loaded by the site; use it when adding or rewording content.
-- `assets/` — images, `CV_Ouail_Lekhchine.pdf` (linked by the "Télécharger mon CV" buttons; replace this file to update the CV), and `og-image.png` (1200×630 LinkedIn/Open Graph preview, referenced by absolute URL in `<head>`). Some filenames contain spaces/accents.
+- `assets/` — images (hero photo: `profile-photo.jpg`, 800×800 square crop), `CV_Ouail_Lekhchine.pdf` (linked by the "Télécharger mon CV" buttons; replace this file to update the CV), and `og-image.png` (1200×630 LinkedIn/Open Graph preview, referenced by absolute URL in `<head>`). Some filenames contain spaces/accents.
 
 ## Projects section
 
