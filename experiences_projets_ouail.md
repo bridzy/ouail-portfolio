@@ -14,22 +14,29 @@
 - Participation au développement de solutions web.  
 - Contribution à l’intégration et à la maintenance de sites web.  
 
-### Ingénieur base de données en alternance  
-**SARL Engineering Consulting Center — Lille**  
-**2023 – 2024**  
-**Outils :** MongoDB, Supabase, PostgreSQL  
-- Migration d'une base MongoDB vers Supabase : analyse de l'existant, règles de correspondance et reprise complète des données.  
-- Vérification de la qualité des données après migration : contrôles de complétude et de cohérence, détection des écarts et documentation.  
+### Ingénieur base de données
+**SARL ECC (Engineering Consulting Center) — Lille**
+**2023 – 2024**
+- Refonte et migration de la base de données d'une application CRM interne.
+- Vérification de la complétude et de la cohérence des données migrées.
 
-### Data Analyst en alternance  
-**SARL Engineering Consulting Center — Lille**  
-**2024 – 2026**  
-**Outils :** Python, Power BI, Excel, SQL  
-- Recueil et traduction des besoins des directions opérationnelles en indicateurs de pilotage.  
-- Requêtage SQL, extraction, préparation et modélisation des jeux de données alimentant les rapports.  
-- Conception, maintenance et évolution de tableaux de bord Power BI et Python sur les ventes, achats, chiffre d'affaires et feedback client.  
-- Définition, harmonisation et documentation des indicateurs entre services, avec contrôles de cohérence avant diffusion.  
-- Analyses ad hoc à la demande des équipes métier et automatisation des traitements récurrents, documentés pour leur maintien en condition opérationnelle.  
+### Data Analyst
+**SARL ECC (Engineering Consulting Center) — secteur e-commerce · Lille**
+**2024 – 2025**
+**Outils :** SQL, Power BI, Python
+- Analyse des données de ventes, achats, chiffre d'affaires et retours clients, avec suivi des KPI commerciaux.
+- Requêtes SQL et préparation des données : nettoyage, jointures, agrégations.
+- Tableaux de bord Power BI et Python : data visualisation et reporting.
+- Prévision des ventes par modèles de séries temporelles en Python, avec comparaison prévu / réalisé.
+
+### Data Analyst
+**Agences MoneyGram — Lille**
+**2025 – 2026**
+**Outils :** SQL, Power BI, ETL
+- Analyse de l'activité de l'ensemble des agences de Lille : KPI de volumes et de montants des transferts, par agence, par période et par pays de destination.
+- Consolidation des données des agences et requêtes SQL pour construire une base de suivi commune (ETL).
+- Tableaux de bord Power BI de comparaison des agences et suivi des KPI.
+- Contrôles de cohérence des données de transactions et détection des opérations atypiques à vérifier (data quality).
 
 ---
 
