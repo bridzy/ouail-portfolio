@@ -653,17 +653,6 @@ a {
     flex-shrink: 0;
 }
 
-/* Initials badge when no logo image is available */
-.company-logo-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.95rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    color: #13294b;
-}
-
 .timeline-details strong {
     color: var(--text-primary);
     font-weight: 600;
